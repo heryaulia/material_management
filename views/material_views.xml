@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_material_form" model="ir.ui.view">
+        <field name="name">material.management.form</field>
+        <field name="model">material.management</field>
+        <field name="arch" type="xml">
+            <form string="Material">
+                <sheet>
+                    <group>
+                        <field name="code"/>
+                        <field name="name"/>
+                        <field name="type"/>
+                        <field name="buy_price"/>
+                        <field name="supplier_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_material_tree" model="ir.ui.view">
+        <field name="name">material.management.tree</field>
+        <field name="model">material.management</field>
+        <field name="arch" type="xml">
+            <tree string="Materials">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="type"/>
+                <field name="buy_price"/>
+                <field name="supplier_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_material_search" model="ir.ui.view">
+        <field name="name">material.management.search</field>
+        <field name="model">material.management</field>
+        <field name="arch" type="xml">
+            <search>
+              <field name="name" string="Material Name" filter_domain="['|', ('name','ilike',self), ('code','ilike',self)]"/>
+              <filter string="Fabric" name="filter_fabric" domain="[('type','=','fabric')]"/>
+              <filter string="Jeans" name="filter_jeans" domain="[('type','=','jeans')]"/>
+              <filter string="Cotton" name="filter_cotton" domain="[('type','=','cotton')]"/>
+          </search>
+        </field>
+    </record>
+
+    <record id="action_material_management" model="ir.actions.act_window">
+        <field name="name">Materials</field>
+        <field name="res_model">material.management</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_material_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Your First Material
+            </p>
+        </field>
+    </record>
+
+
+</odoo>
