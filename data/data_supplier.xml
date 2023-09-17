@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Supplier Data -->
+        <record id="supplier_1" model="supplier.management">
+            <field name="name">PERMATA TEXTILE</field>
+            <field name="contact">0813-1512-3455</field>
+            <field name="address">Ruko Permata Kopo R2 no.12, Sukamenak, Kec. Margahayu, Kabupaten Bandung, Jawa Barat 40227</field>
+            <field name="email">contact@permatatextile.com</field>
+        </record>
+        <record id="supplier_2" model="supplier.management">
+            <field name="name">Cotton Centre</field>
+            <field name="contact">(022) 6030166</field>
+            <field name="address">Jl. Aruna No.18, Husen Sastranegara, Kec. Cicendo, Kota Bandung, Jawa Barat 40172</field>
+            <field name="email"></field>
+        </record>
+        
+    </data>
+</odoo>
